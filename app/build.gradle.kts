@@ -7,6 +7,9 @@ android {
     namespace = "com.example.facebookclone"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.facebookclone"
         minSdk = 24
