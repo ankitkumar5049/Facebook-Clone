@@ -1,7 +1,8 @@
-package com.example.facebookclone
+package com.example.facebookclone.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.facebookclone.R
 import com.example.facebookclone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
