@@ -1,14 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.SignInFragment">
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Facebook"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:padding="5dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_margin="8dp"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#707050"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Mobile number or email address"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="3dp"
+    android:layout_marginHorizontal="5dp"
+    android:paddingVertical="3dp"
+    android:textSize="17dp"
+    android:textColor="@color/textColor"
+    />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:textColor="#D9D9D9"
+        android:background="#C1C1C1"
+        android:layout_marginTop="3dp"
+        android:layout_marginHorizontal="5dp"
+        android:padding="8dp"
+/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:paddingVertical="5dp"
+        android:text="Password"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="3dp"
+        android:textColor="@color/textColor"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:background="#C1C1C1"
+        android:layout_marginHorizontal="5dp"
+        android:padding="8dp"
+         />
+
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="8dp"
+        android:background="@color/button"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgotten Password?"
+        android:layout_marginVertical="3dp"
+        android:paddingVertical="5dp"
+        android:layout_marginHorizontal="5dp"
+        android:textSize="17dp"
+        android:textColor="@color/button"
+        />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="15dp"
+    >
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="#C2C2C2"
+        android:layout_marginLeft="8dp"/>
+
+    <!-- "or" text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textSize="17dp"
+        android:textColor="@color/white"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp" />
+
+    <!-- Right line -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="#C1C1C1"
+        android:layout_marginRight="8dp"/>
+</LinearLayout>
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:background="#1C8E36"
+        android:text="Create New Account"
+    android:paddingHorizontal="7dp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textSize="17dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+</LinearLayout>

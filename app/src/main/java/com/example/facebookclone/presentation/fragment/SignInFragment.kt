@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.facebookclone.R
 
 class SignInFragment : Fragment() {
@@ -14,6 +15,7 @@ class SignInFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_in, container, false)
+        Toast.makeText(context, "Otp sent", Toast.LENGTH_SHORT).show()
     }
 
 }
