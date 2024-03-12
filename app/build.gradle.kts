@@ -10,6 +10,8 @@ android {
 
     buildFeatures {
         viewBinding = true
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
     }
     defaultConfig {
         applicationId = "com.example.facebookclone"

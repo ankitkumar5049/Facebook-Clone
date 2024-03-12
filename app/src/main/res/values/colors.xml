@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#CDD1D4</color>
+    <color name="text_color_bold">#3A3A3A</color>
     <color name="splashBackgroundColor">#FFFFFFFF</color> <!-- Example color -->
     <color name="button">#0079FB</color>
 </resources>
