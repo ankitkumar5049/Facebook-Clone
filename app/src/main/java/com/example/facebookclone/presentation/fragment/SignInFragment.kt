@@ -16,6 +16,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAction()
+        showLog("Sign in frag")
     }
 
     private fun initAction() {
