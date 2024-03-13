@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -19,5 +22,15 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsFeedFragment"
+        android:name="com.example.facebookclone.presentation.fragment.NewsFeedFragment"
+        android:label="NewsFeedFragment">
+
     </fragment>
 </navigation>

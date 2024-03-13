@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".presentation.fragment.SignUpFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
@@ -48,7 +44,7 @@
             android:layout_marginBottom="3dp"
             android:paddingVertical="3dp"
             android:text="@string/user_name"
-            android:textColor="@color/text_color_bold"
+            android:textColor="@color/textColor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/empty_view" />
@@ -61,25 +57,27 @@
             app:layout_constraintTop_toBottomOf="@id/username_title">
 
             <EditText
-                android:id="@+id/first_name"
+                android:id="@+id/etFirstName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="3dp"
                 android:layout_weight="1"
-                android:background="#C1C1C1"
+                android:hint="First Name"
+                android:background="@color/etBackgroundColor"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/last_name"
+                android:id="@+id/edtLastName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="3dp"
+                android:hint="Last Name"
                 android:layout_weight="1"
-                android:background="#C1C1C1"
+                android:background="@color/etBackgroundColor"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black" />
@@ -94,17 +92,18 @@
             android:layout_marginVertical="3dp"
             android:paddingVertical="5dp"
             android:text="@string/date_of_birth"
-            android:textColor="@color/text_color_bold"
+            android:textColor="@color/textColor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/username_container" />
 
         <TextView
-            android:id="@+id/dob_text"
+            android:id="@+id/tvDob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:background="#C1C1C1"
+            android:hint="DOB"
+            android:background="@color/etBackgroundColor"
             android:padding="8dp"
             android:textColor="@color/textColor"
             app:layout_constraintTop_toBottomOf="@id/dob_title" />
@@ -118,18 +117,18 @@
             android:layout_marginBottom="3dp"
             android:paddingVertical="3dp"
             android:text="@string/gender"
-            android:textColor="@color/text_color_bold"
+            android:textColor="@color/textColor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dob_text" />
+            app:layout_constraintTop_toBottomOf="@id/tvDob" />
 
         <EditText
-            android:id="@+id/gender_edittext"
+            android:id="@+id/edtGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="3dp"
-            android:background="#C1C1C1"
+            android:background="@color/etBackgroundColor"
             android:inputType="textEmailAddress"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -144,18 +143,18 @@
             android:layout_marginBottom="3dp"
             android:paddingVertical="3dp"
             android:text="@string/email_address"
-            android:textColor="@color/text_color_bold"
+            android:textColor="@color/textColor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gender_edittext" />
+            app:layout_constraintTop_toBottomOf="@id/edtGender" />
 
         <EditText
-            android:id="@+id/email_edittext"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="3dp"
-            android:background="#C1C1C1"
+            android:background="@color/etBackgroundColor"
             android:inputType="textEmailAddress"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -170,25 +169,25 @@
             android:layout_marginBottom="3dp"
             android:paddingVertical="3dp"
             android:text="@string/mobile_number"
-            android:textColor="@color/text_color_bold"
+            android:textColor="@color/textColor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/email_edittext" />
+            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
 
         <EditText
-            android:id="@+id/mobileno_edittext"
+            android:id="@+id/edtMobNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="3dp"
-            android:background="#C1C1C1"
+            android:background="@color/etBackgroundColor"
             android:inputType="textEmailAddress"
             android:padding="8dp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/mobileno_title" />
 
         <Button
-            android:id="@+id/buttonLogin"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:layout_marginLeft="5dp"
@@ -201,6 +200,5 @@
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/mobileno_edittext" />
+            app:layout_constraintTop_toBottomOf="@id/edtMobNo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
