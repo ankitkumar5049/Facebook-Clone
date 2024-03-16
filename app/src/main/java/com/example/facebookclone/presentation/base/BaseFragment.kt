@@ -1,5 +1,6 @@
 package com.example.facebookclone.presentation.base
 
+import android.app.PendingIntent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewbinding.ViewBinding
+import com.google.android.gms.auth.api.credentials.Credentials
+import com.google.android.gms.auth.api.credentials.CredentialsOptions
+import com.google.android.gms.auth.api.credentials.HintRequest
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -26,6 +31,17 @@ open class BaseFragment<VBinding : ViewBinding>(
         _binding = inflateMethod.invoke(inflater, container, false)
         return binding.root
 
+    }
+
+    open fun getPhoneHintIntent(activity: FragmentActivity): PendingIntent {
+        val hintRequest = HintRequest.Builder()
+            .setPhoneNumberIdentifierSupported(true)
+//            .setEmailAddressIdentifierSupported(true)
+            .build()
+        val options = CredentialsOptions.Builder()
+            .forceEnableSaveDialog()
+            .build()
+        return Credentials.getClient(activity, options).getHintPickerIntent(hintRequest)
     }
 
     fun showToast(message: String) {
