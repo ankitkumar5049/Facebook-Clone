@@ -79,7 +79,7 @@
                 android:hint="Last Name"
                 android:layout_weight="1"
                 android:background="@color/etBackgroundColor"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:hint="DOB"
+            android:hint="@string/select"
             android:background="@color/etBackgroundColor"
             android:padding="8dp"
             android:textColor="@color/textColor"
@@ -129,8 +129,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="3dp"
+            android:hint="@string/enter"
             android:background="@color/etBackgroundColor"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/gender_title" />
@@ -157,6 +158,7 @@
             android:layout_marginTop="3dp"
             android:background="@color/etBackgroundColor"
             android:inputType="textEmailAddress"
+            android:hint="@string/enter"
             android:padding="8dp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/email_title" />
@@ -181,11 +183,66 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="3dp"
+            android:hint="@string/enter"
             android:background="@color/etBackgroundColor"
-            android:inputType="textEmailAddress"
+            android:inputType="number"
             android:padding="8dp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/mobileno_title" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/password"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtMobNo" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/etBackgroundColor"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:hint="@string/enter"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+
+        <TextView
+            android:id="@+id/tvConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/confirm_password"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/etBackgroundColor"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:hint="@string/enter"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvConfirmPassword" />
 
         <Button
             android:id="@+id/btnSignUp"
@@ -201,5 +258,5 @@
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/edtMobNo" />
+            app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword" />
     </androidx.constraintlayout.widget.ConstraintLayout>
