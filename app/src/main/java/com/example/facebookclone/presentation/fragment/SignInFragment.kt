@@ -18,8 +18,12 @@ import com.example.facebookclone.presentation.base.BaseFragment
 import com.google.android.gms.auth.api.credentials.Credential
 import com.google.android.gms.auth.api.credentials.Credentials
 import com.google.android.gms.auth.api.credentials.CredentialsClient
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding::inflate) {
+    private lateinit var auth: FirebaseAuth
     private lateinit var credentialClient: CredentialsClient
     val launcher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) {
         if (it.resultCode == Activity.RESULT_OK) {
@@ -32,9 +36,11 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
         }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         credentialClient = Credentials.getClient(requireContext())
+        auth = Firebase.auth
         initAction()
         showLog("Sign in frag")
         launchPhoneHint()
@@ -47,11 +53,27 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
 
     private fun initAction() {
         binding.buttonLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_signInFragment_to_newsFeedFragment)
+            userSignIn()
         }
         binding.buttonCreateAccount.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
 
+    }
+
+    private fun userSignIn(){
+        auth.signInWithEmailAndPassword(binding.editTextUsername.text.toString(), binding.editTextPassword.text.toString())
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    findNavController().navigate(R.id.action_signInFragment_to_newsFeedFragment)
+                    // Sign in success, update UI with the signed-in user's information
+                    showLog("signInWithEmail:success")
+                    val user = auth.currentUser
+                } else {
+                    // If sign in fails, display a message to the user.
+                    showLog("signInWithEmail:failure")
+                    showToast("Authentication failed.")
+                }
+            }
     }
 }
