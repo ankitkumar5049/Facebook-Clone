@@ -1,0 +1,17 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvSpinner"
+    android:layout_width="match_parent"
+    android:background="@null"
+    android:hint="@string/gender"
+    android:textColor="@color/textColor"
+    android:textStyle="normal"
+    android:paddingHorizontal="14dp"
+    android:layout_height="wrap_content"
+    android:textAlignment="viewStart"
+    android:saveEnabled="false"
+    android:maxWidth="80dp"
+    android:textSize="16sp"
+    style="?attr/spinnerDropDownItemStyle"
+    android:singleLine="true"
+    android:ellipsize="marquee"/>

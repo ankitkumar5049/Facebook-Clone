@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatCheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="80dp"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="13dp"
+    android:textAlignment="viewStart"
+    android:textStyle="normal"
+    tools:text="item_default"/>

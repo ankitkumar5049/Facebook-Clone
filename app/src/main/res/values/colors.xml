@@ -7,4 +7,5 @@
     <color name="splashBackgroundColor">#FFFFFFFF</color> <!-- Example color -->
     <color name="etBackgroundColor">#C1C1C1</color>
     <color name="button">#0079FB</color>
+    <color name="dropdown_selected_text_color">#252528</color>
 </resources>

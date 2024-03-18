@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- gender menu items-->
+    <string-array name="gender_items">
+        <item>@string/gender</item>
+        <item>@string/female</item>
+        <item>@string/male</item>
+    </string-array>
+
+</resources>
