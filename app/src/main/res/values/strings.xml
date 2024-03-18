@@ -21,4 +21,7 @@
     <string name="select">Select</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
+    <string name="mobile_number_digits_warning">Please enter 10 digit Mobile Number</string>
+    <string name="email_address_warning">Please enter a valid Email address</string>
+    <string name="fill_all_details">Please fill all details</string>
 </resources>

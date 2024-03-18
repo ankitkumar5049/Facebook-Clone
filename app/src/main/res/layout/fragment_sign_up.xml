@@ -1,280 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="10dp"
-    android:background="@color/design_default_color_on_primary"
-    android:descendantFocusability="beforeDescendants"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    tools:context=".presentation.fragment.SignUpFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/title_text"
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.facebookclone.presentation.viewModels.SignUpViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="@string/facebook"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#707050"
-        app:layout_constraintTop_toBottomOf="@id/title_text" />
-
-    <TextView
-        android:id="@+id/username_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:text="@string/user_name"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/empty_view" />
-
-    <LinearLayout
-        android:id="@+id/username_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/username_title">
-
-        <EditText
-            android:id="@+id/etFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"
-            android:background="@color/etBackgroundColor"
-            android:hint="First Name"
-            android:inputType="textEmailAddress"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/edtLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"
-            android:background="@color/etBackgroundColor"
-            android:hint="Last Name"
-            android:inputType="text"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/dob_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="3dp"
-        android:paddingVertical="5dp"
-        android:text="@string/date_of_birth"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toStartOf="@id/gender_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_container" />
-
-    <TextView
-        android:id="@+id/gender_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:paddingStart="14dp"
-        android:text="@string/gender"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/dob_title"
-        app:layout_constraintTop_toBottomOf="@id/username_container"
-        tools:ignore="RtlSymmetry" />
-
-    <LinearLayout
-        android:id="@+id/dob_gender_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/dob_title">
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/design_default_color_on_primary"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".presentation.fragment.SignUpFragment">
 
         <TextView
-            android:id="@+id/tvDob"
-            android:layout_width="0dp"
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:background="@color/etBackgroundColor"
-            android:hint="@string/select"
-            android:padding="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/facebook"
             android:textColor="@color/textColor"
-            android:textSize="16sp" />
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/gender_spinner"
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#707050"
+            app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+        <TextView
+            android:id="@+id/username_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/user_name"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/empty_view" />
+
+        <LinearLayout
+            android:id="@+id/username_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/username_title">
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:background="@color/etBackgroundColor"
+                android:hint="First Name"
+                android:text="@={viewmodel.updatedUserData.name.first}"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:background="@color/etBackgroundColor"
+                android:hint="Last Name"
+                android:text="@={viewmodel.updatedUserData.name.last}"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dob_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
+            android:layout_marginVertical="3dp"
+            android:paddingVertical="5dp"
+            android:text="@string/date_of_birth"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@id/gender_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_container" />
+
+        <TextView
+            android:id="@+id/gender_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:paddingStart="14dp"
+            android:text="@string/gender"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dob_title"
+            app:layout_constraintTop_toBottomOf="@id/username_container"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:id="@+id/dob_gender_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/dob_title">
+
+            <TextView
+                android:id="@+id/tvDob"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@color/etBackgroundColor"
+                android:hint="@string/select"
+                android:padding="8dp"
+                android:text="@={viewmodel.updatedUserData.birthDate}"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@color/etBackgroundColor"
+                android:backgroundTint="@color/white"
+                android:backgroundTintMode="multiply"
+                android:entries="@array/gender_items"
+                android:padding="8dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/email_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/email_address"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dob_gender_container" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
             android:background="@color/etBackgroundColor"
-            android:backgroundTint="@color/white"
-            android:backgroundTintMode="multiply"
-            android:entries="@array/gender_items"
+            android:hint="@string/enter"
+            android:inputType="textEmailAddress"
+            android:text="@={viewmodel.updatedUserData.email}"
             android:padding="8dp"
-            android:spinnerMode="dropdown" />
-    </LinearLayout>
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/email_title" />
 
-    <TextView
-        android:id="@+id/email_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:text="@string/email_address"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dob_gender_container" />
+        <TextView
+            android:id="@+id/mobileno_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/mobile_number"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
 
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="3dp"
-        android:background="@color/etBackgroundColor"
-        android:hint="@string/enter"
-        android:inputType="textEmailAddress"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/email_title" />
+        <EditText
+            android:id="@+id/edtMobNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/etBackgroundColor"
+            android:hint="@string/enter"
+            android:inputType="number"
+            android:padding="8dp"
+            android:text="@={viewmodel.updatedUserData.mobileNumber}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/mobileno_title" />
 
-    <TextView
-        android:id="@+id/mobileno_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:text="@string/mobile_number"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtEmail" />
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/password"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtMobNo" />
 
-    <EditText
-        android:id="@+id/edtMobNo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="3dp"
-        android:background="@color/etBackgroundColor"
-        android:hint="@string/enter"
-        android:inputType="number"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/mobileno_title" />
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/etBackgroundColor"
+            android:hint="@string/enter"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvPassword" />
 
-    <TextView
-        android:id="@+id/tvPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:text="@string/password"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtMobNo" />
+        <TextView
+            android:id="@+id/tvConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="3dp"
+            android:paddingVertical="3dp"
+            android:text="@string/confirm_password"
+            android:textColor="@color/textColor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
 
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="3dp"
-        android:background="@color/etBackgroundColor"
-        android:hint="@string/enter"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/etBackgroundColor"
+            android:hint="@string/enter"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvConfirmPassword" />
 
-    <TextView
-        android:id="@+id/tvConfirmPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingVertical="3dp"
-        android:text="@string/confirm_password"
-        android:textColor="@color/textColor"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtPassword" />
-
-    <EditText
-        android:id="@+id/edtConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="3dp"
-        android:background="@color/etBackgroundColor"
-        android:hint="@string/enter"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvConfirmPassword" />
-
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="4dp"
-        android:background="@color/button"
-        android:text="@string/create_account"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/button"
+            android:text="@string/create_account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
